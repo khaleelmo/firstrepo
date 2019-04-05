@@ -1,44 +1,62 @@
-pipeline {
-  agent any
-  stages {
-    stage('Checkout') {
-      steps {
-        echo 'Hello Jenkins!'
-      }
-    }
-    stage('Build') {
-      steps {
-        echo 'Hello Jenkins!'
-      }
-    }
-    stage('Test') {
-      steps {
-        echo 'Hello Jenkins!'
-      }
-    }
-    stage('Deploy') {
-      steps {
-        echo 'Hello Jenkins!'
-      }
-    }
-    stage('run-parallel-branches') {
-      parallel {
-        stage('a') {
-          steps {
-            echo 'Tests on Linux'
-            sleep 10
-          }
+pipeline{
+
+    agent {
+        
+        node {
+             customWorkspace 'C:/Users/mokhalee/Jenkins/workspace'
         }
-        stage('b') {
-          steps {
-            echo 'Tests on Windows'
-            sleep 10
-          }
-        }
-      }
+
     }
-  }
-  options {
-    timestamps()
-  }
+
+    
+    options {
+        timestamps()
+        
+
+    }
+
+    stages{
+        stage('Checkout') {
+        steps {
+            echo 'Hello Jenkins!'
+
+        }
+   
+        }
+        stage('Build') {
+            steps {
+            echo 'Hello Jenkins!'
+
+        }
+        }
+        stage('Test') {
+            steps {
+            echo 'Hello Jenkins!'
+
+        }
+        }
+		stage('Deploy'){
+		     steps {
+            echo 'Hello Jenkins!'
+
+        }
+		}
+
+		stage('run-parallel-branches') {
+ 				steps {
+  			parallel(
+   					a: {
+    		echo "Tests on Linux"
+    		sleep 10
+   				},
+   				b: {	
+    	echo "Tests on Windows"
+    	sleep 10
+  			 }
+  			)
+		 }
+		}
+
+    }
+
 }
