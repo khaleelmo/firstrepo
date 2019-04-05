@@ -3,6 +3,7 @@ pipeline{
     agent {
         
         node {
+		label 'master'
              customWorkspace 'C:/Users/mokhalee/Jenkins/workspace'
         }
 
