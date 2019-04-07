@@ -19,7 +19,7 @@ pipeline{
     stages{
         stage('Checkout') {
         steps {
-            echo 'Hello Jenkins! from newbranch'
+            echo 'Hello Jenkins! from newbranch1234'
 
         }
    
