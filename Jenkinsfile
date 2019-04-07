@@ -32,7 +32,7 @@ pipeline{
         }
         stage('Test') {
             steps {
-            echo 'Hello Jenkins!'
+            echo 'Hello Jenkins:testing!'
 
         }
         }
