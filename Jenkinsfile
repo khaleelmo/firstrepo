@@ -26,7 +26,7 @@ pipeline{
         }
         stage('Build') {
             steps {
-            echo 'Hello Jenkins!'
+            echo 'Hello Jenkins:Testing!'
 
         }
         }
