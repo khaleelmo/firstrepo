@@ -19,7 +19,7 @@ pipeline{
     stages{
         stage('Checkout') {
         steps {
-            echo 'Hello Jenkins:!'
+            echo 'Hello Jenkins:Testing!'
 
         }
    
